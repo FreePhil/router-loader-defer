@@ -1,8 +1,8 @@
-const One = ({color, children}) => {
+const One = ({style, children}) => {
     return (
       <div>
-        <h1 style={{color: color}}>
-            One page {color}
+        <h1 style={style}>
+            One page 
             {children}
         </h1>
       </div>

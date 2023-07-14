@@ -26,7 +26,6 @@ const router = createBrowserRouter(
       />
       <Route path="/raw/*" element={<Raw />} />
       {false? <Route path="/protected" element={<Protected />} />: null}
-      {/* <Route path="/*" element={<Error />} /> */}
     </Route>
   )
 );
