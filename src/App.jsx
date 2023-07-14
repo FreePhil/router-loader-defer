@@ -1,4 +1,5 @@
 import {
+  Routes,
   Route,
   createBrowserRouter,
   createRoutesFromElements,
@@ -7,7 +8,12 @@ import {
 
 import Layout from "./components/Layout";
 import HomePage from "./pages/Home";
+import Raw from "./pages/Raw";
+import Protected from "./pages/Protected";
 import RandomPostPage, { postLoader } from "./pages/RandomPost";
+import ProtectedRoute from "./ProtectedRoute";
+import React from "react";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +24,9 @@ const router = createBrowserRouter(
         loader={postLoader}
         element={<RandomPostPage />}
       />
+      <Route path="/raw/*" element={<Raw />} />
+      {false? <Route path="/protected" element={<Protected />} />: null}
+      {/* <Route path="/*" element={<Error />} /> */}
     </Route>
   )
 );

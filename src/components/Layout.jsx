@@ -15,7 +15,7 @@ const Layout = () => {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/" style={{display: "flex"}}>Home</Link>
         <button onClick={handlePostavigation}>Random Post</button>
       </nav>
 
