@@ -3,11 +3,18 @@ import {Route} from 'react-router-dom';
 import Error from './pages/Error';
 import One from './pages/One';
 
-const ProtectedRoute = ({children, role, allowedRoles, ...rest}) => {
+const wrapComponent = (wrapperProps) => ((WrappedComponent) => {
+    const wrapper = (props) => <WrappedComponent {...props} />;
+    return wrapper;
+});
+
+const ProtectedRoute = ({role, allowedRoles, component, ...rest}) => {
     const isAuthorized = allowedRoles.includes(role);
+    const WrappedComponent = component;
     return (
-        isAuthorized? children: <Error />
+        isAuthorized? <WrappedComponent {...rest} />: <Error {...rest} />
     )
 }
+
 
 export default ProtectedRoute;
