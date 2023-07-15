@@ -8,11 +8,13 @@ const wrapComponent = (wrapperProps) => ((WrappedComponent) => {
     return wrapper;
 });
 
-const ProtectedRoute = ({role, allowedRoles, component, ...rest}) => {
+const ProtectedRoute = ({role, allowedRoles, children}) => {
     const isAuthorized = allowedRoles.includes(role);
-    const WrappedComponent = component;
+    const WrappedComponent = () => {
+        return children;
+    }
     return (
-        isAuthorized? <WrappedComponent {...rest} />: <Error {...rest} />
+        isAuthorized? <WrappedComponent />: <Error />
     )
 }
 

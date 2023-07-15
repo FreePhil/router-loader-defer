@@ -13,7 +13,11 @@ const Raw = () => {
         <Link to="/raw/1">One</Link>
         <Routes>
           <Route element={<><h1>Raw Header</h1><Outlet /></>}>
-            <Route path="1" element={<ProtectedRoute role={'a'} allowedRoles={['a', 'b']} component={One} style={{color: 'red'}} />} />
+            <Route path="1" element={
+              <ProtectedRoute role={'a'} allowedRoles={['a', 'b']}>
+                <One style={{color: 'green'}} />
+              </ProtectedRoute>
+            } />
             <Route path="2" element={<Two />} />
           </Route>
           <Route path="3" element={<Three />} />
