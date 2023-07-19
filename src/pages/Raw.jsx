@@ -15,7 +15,7 @@ const Raw = () => {
           <Route element={<><h1>Raw Header</h1><Outlet /></>}>
             <Route path="1" element={
               <ProtectedRoute role={'a'} allowedRoles={['a', 'b']}>
-                <One style={{color: 'green'}} />
+                <One />
               </ProtectedRoute>
             } />
             <Route path="2" element={<Two />} />

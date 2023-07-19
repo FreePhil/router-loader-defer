@@ -14,6 +14,7 @@ import RandomPostPage, { postLoader } from "./pages/RandomPost";
 import ProtectedRoute from "./ProtectedRoute";
 import React from "react";
 import Error from "./pages/Error";
+import All from './pages/All';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
         element={<RandomPostPage />}
       />
       <Route path="/raw/*" element={<Raw />} />
+      <Route path="/secured/*" element={<All />} />
       {false? <Route path="/protected" element={<Protected />} />: null}
     </Route>
   )

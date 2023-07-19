@@ -1,7 +1,10 @@
-const Two = () => {
+const Two = ({style, children}) => {
     return (
       <div>
-        <h1>Two page</h1>
+        <h1 style={style}>
+            Page Two
+            {children}
+        </h1>
       </div>
     );
   };

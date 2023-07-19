@@ -14,7 +14,7 @@ const ProtectedRoute = ({role, allowedRoles, children}) => {
         return children;
     }
     return (
-        isAuthorized? <WrappedComponent />: <Error />
+        isAuthorized? <WrappedComponent />: null
     )
 }
 
