@@ -1,4 +1,5 @@
 const One = ({style, children}) => {
+    style = style || {backgroundColor: "lightgray", margin: 0};
     return (
       <div>
         <h4 style={style}>
