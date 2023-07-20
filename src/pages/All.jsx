@@ -2,37 +2,41 @@ import ProtectedRoute from "../ProtectedRoute";
 import One from "./One";
 import Two from "./Two";
 import Three from "./Three";
+import user from "../security/user.json";
 
 function All() {
     return (
         <div>
+            <h2>User role: {user.roles.join(',')} </h2>
+
             <One />
             <Two />
             <Three />
-            <h1>************************</h1>
+
+            <h2>******* allowed role a,b for one ********</h2>
+
+            <ProtectedRoute sid="security-pages-one">
+                <One />
+            </ProtectedRoute>
+            <Two />
+            <Three />
+
+            <h2>******* allowed role b,c for two ********</h2>
+
             <One />
-            <ProtectedRoute role={'b1'} allowedRoles={['a', 'b']}>
+            <ProtectedRoute sid="security-pages-two">
                 <Two />
             </ProtectedRoute>
             <Three />
 
-            <h1>************************</h1>
+            <h2>******* allowed role a,c for three ********</h2>
 
             <One />
             <Two />
-            <ProtectedRoute role={'b'} allowedRoles={['b', 'c']}>
+            <ProtectedRoute sid="security-pages-three">
                 <Three />
             </ProtectedRoute>
 
-            <h1>************************</h1>
-
-            <ProtectedRoute role={'b'} allowedRoles={['b', 'c']}>
-                <>
-                    <One />
-                    <Two />
-                    <Three />
-                </>     
-            </ProtectedRoute>
         </div>
     );
 }

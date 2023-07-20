@@ -2,15 +2,16 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import Error from './pages/Error';
 import One from './pages/One';
-import roles from './security/roles.json';
+import allowedRoles from './security/roles.json';
+import user from './security/user.json';
 
 const wrapComponent = (wrapperProps) => ((WrappedComponent) => {
     const wrapper = (props) => <WrappedComponent {...props} />;
     return wrapper;
 });
 
-const ProtectedRoute = ({role, allowedRoles, children}) => {
-    const isAuthorized = allowedRoles.includes(role);
+const ProtectedRoute = ({sid, children}) => {
+    const isAuthorized = user.roles.some(role => allowedRoles[sid].includes(role));
     const WrappedComponent = () => {
         return children;
     }

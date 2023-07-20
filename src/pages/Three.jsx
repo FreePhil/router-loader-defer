@@ -1,10 +1,10 @@
 const Three = ({style, children}) => {
     return (
       <div>
-        <h1 style={style}>
+        <h4 style={style}>
             Page Three
             {children}
-        </h1>
+        </h4>
       </div>
     );
   };

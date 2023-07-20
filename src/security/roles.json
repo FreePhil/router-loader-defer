@@ -1,3 +1,5 @@
 {
-    "security-pages-one": ["a", "b"]
+    "security-pages-one": ["a", "b"],
+    "security-pages-two": ["b", "c"],
+    "security-pages-three": ["a", "c"]
 }
