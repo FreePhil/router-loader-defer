@@ -2,7 +2,7 @@ const One = ({style, children}) => {
     return (
       <div>
         <h4 style={style}>
-            Page One
+            Component One
             {children}
         </h4>
       </div>

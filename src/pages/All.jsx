@@ -37,6 +37,13 @@ function All() {
                 <Three />
             </ProtectedRoute>
 
+            <h2>******* allowed role d for all ********</h2>
+                <ProtectedRoute sid="security-pages-all">
+                    <One />
+                    <Two />
+                    <Three />
+                </ProtectedRoute>
+
         </div>
     );
 }
