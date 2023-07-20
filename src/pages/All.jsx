@@ -7,6 +7,10 @@ function All() {
     return (
         <div>
             <One />
+            <Two />
+            <Three />
+            <h1>************************</h1>
+            <One />
             <ProtectedRoute role={'b1'} allowedRoles={['a', 'b']}>
                 <Two />
             </ProtectedRoute>

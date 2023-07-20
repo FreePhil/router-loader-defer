@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import Error from './pages/Error';
 import One from './pages/One';
+import roles from './security/roles.json';
 
 const wrapComponent = (wrapperProps) => ((WrappedComponent) => {
     const wrapper = (props) => <WrappedComponent {...props} />;
