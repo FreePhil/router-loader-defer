@@ -1,3 +1,6 @@
 {
-    "one": "Component One"
+    "one": "Component One",
+    "two": "Component Two",
+    "three": "Component Three",
+    "all": "All Components"
 }
